@@ -1,0 +1,61 @@
+
+/*******************************************************
+*                                                      *
+*    “Saraswati Mahabhage, Vidye Kamalalochane         *
+*    Vishwarupe Vishalakshi, Vidyam Dehi Namostute.”   *
+*                                                      *
+*******************************************************/
+
+#include <bits/stdc++.h>
+using namespace std;
+
+#define ll   long long
+#define pb   push_back
+#define all(x) x.begin(), x.end()
+#define rep(i,a,b) for(int i=a; i<b; i++)
+
+const int INF  = 1e9;
+const ll  LINF = 1e18;
+const int MOD  = 1e9 + 7;
+void solve() {
+     int n;
+     cin >> n;
+     string st;
+     cin >> st;
+
+     stack<char> s;
+
+     for(int i = 0; i < n; i++)
+     {
+        if(st[i] == '(')
+        {
+            s.push(st[i]);  // ✅ Fixed: st[i] instead of s[i]
+        }
+        else if(st[i] == ')' && !s.empty() && s.top() == '(')  // ✅ Fixed: check s.top()
+        {
+            s.pop();
+        }
+        else 
+        {
+            s.push(st[i]);
+        }
+     }
+     cout << s.size()/2 << endl;
+}
+
+
+
+int main() {
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+
+    int t = 1;
+    cin >> t;  
+    while (t--) solve();
+
+    return 0;
+}
+
+
+//   "Every error is a step closer to the solution." 
+//     @Author : Prasanjit Roy
