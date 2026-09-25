@@ -29,9 +29,9 @@ void solve() {
      {
         if(st[i] == '(')
         {
-            s.push(st[i]);  // ✅ Fixed: st[i] instead of s[i]
+            s.push(st[i]);  
         }
-        else if(st[i] == ')' && !s.empty() && s.top() == '(')  // ✅ Fixed: check s.top()
+        else if(st[i] == ')' && !s.empty() && s.top() == '(')  
         {
             s.pop();
         }
